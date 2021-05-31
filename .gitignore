@@ -31,6 +31,16 @@ hs_err_pid*
 ## ignoring target file
 target/
 
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
 ### Maven ###
 pom.xml.tag
 pom.xml.releaseBackup
