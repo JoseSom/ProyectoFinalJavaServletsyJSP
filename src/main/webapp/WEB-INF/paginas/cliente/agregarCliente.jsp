@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="saldo">Saldo</label>
-                        <input type="number" name="saldo" class="form-control" required/>
+                        <input type="number" step="any" name="saldo" class="form-control" required/>
                     </div>
                 </div>
                 <div class="modal-footer">

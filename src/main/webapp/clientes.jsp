@@ -1,6 +1,4 @@
-
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html>
 
     <head>
@@ -21,16 +19,16 @@
 
     <body>
         <!-- cabecero -->
-        <jsp:include page="WEB-INF/paginas/comunes/cabecero.jsp"></jsp:include>
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecero.jsp"></jsp:include>
 
         <!-- Botones navegacion-->
-        <jsp:include page="WEB-INF/paginas/comunes/botonesNavegacion.jsp"></jsp:include>
+        <jsp:include page="/WEB-INF/paginas/comunes/botonesNavegacion.jsp"></jsp:include>
 
         <!-- Listado clientes-->
-        <jsp:include page="WEB-INF/paginas/cliente/listadoClientes.jsp"></jsp:include>
+        <jsp:include page="/WEB-INF/paginas/cliente/listadoClientes.jsp"></jsp:include>
 
         <!--Pie de pagina-->
-        <jsp:include page="WEB-INF/paginas/comunes/piePagina.jsp"></jsp:include>
+        <jsp:include page="/WEB-INF/paginas/comunes/piePagina.jsp"></jsp:include>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

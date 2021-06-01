@@ -13,7 +13,18 @@ public class ServletControlador extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.accionDefault(request, response);
+        String accion = request.getParameter("accion");
+        if (accion != null) {
+            switch (accion) {
+                case "editar":
+                    this.editarCliente(request,response);
+                    break;
+                default:
+                    this.accionDefault(request, response);
+            }
+        } else {
+            this.accionDefault(request, response);
+        }
     }
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,6 +49,20 @@ public class ServletControlador extends HttpServlet {
         }
 
         return saldoTotal;
+    }
+    
+     private void editarCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+         //Recuperamos el idCliente
+         int idCliente = Integer.parseInt(request.getParameter("idCliente"));
+         
+         //Creamos el objeto de cliente (modelo) y Recuperamos los parametros 
+         Cliente cliente = new ClienteDaoJDBC().encontrar(new Cliente(idCliente));
+         
+         //Definimos el alcance
+         request.setAttribute("cliente", cliente);
+         String jspEditar = "/WEB-INF/paginas/cliente/editarCliente.jsp";
+         request.getRequestDispatcher(jspEditar).forward(request, response);
+         
     }
 
     @Override
@@ -79,4 +104,6 @@ public class ServletControlador extends HttpServlet {
             //Redirigimos hacia la accion por default
             this.accionDefault(request, response);
     }
+    
+    
 }
